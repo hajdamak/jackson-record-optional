@@ -3,23 +3,12 @@ package example;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 
 import java.util.Optional;
 
-@SpringBootApplication
 public class App {
 
-    public static void main(final String[] args) {
-        final var app = new SpringApplicationBuilder(App.class).build();
-        app.run(args);
-    }
-
-    @EventListener(ApplicationReadyEvent.class)
-    public void doSomethingAfterStartup() throws JsonProcessingException {
+    public static void main(final String[] args) throws JsonProcessingException {
         final var mapper = new ObjectMapper();
         mapper.registerModule(new Jdk8Module());
 
