@@ -27,14 +27,14 @@ public class App {
         final var json1 = """
         {
             "color" : null,
-             "type" : "BMW"
+             "type" : "Solaris"
         }
         """;
         System.out.println("Color is null : " + mapper.readValue(json1, Car.class));
 
         final var json2 = """
         { 
-            "type" : "BMW"
+            "type" : "Soraris"
         }
         """;
         System.out.println("Color undefined : " + mapper.readValue(json2, Car.class));
