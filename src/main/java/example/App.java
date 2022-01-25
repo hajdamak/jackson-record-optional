@@ -34,7 +34,7 @@ public class App {
 
         final var json2 = """
         { 
-            "type" : "Soraris"
+            "type" : "Solaris"
         }
         """;
         System.out.println("Color undefined : " + mapper.readValue(json2, Car.class));
